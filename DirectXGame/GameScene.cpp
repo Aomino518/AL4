@@ -1,0 +1,12 @@
+#include "GameScene.h"
+
+using namespace KamataEngine;
+
+// 初期化
+void GameScene::Init() {}
+
+// 更新
+void GameScene::Update() {}
+
+// 描画
+void GameScene::Draw() {}
