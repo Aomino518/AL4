@@ -6,7 +6,7 @@
 int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR, _In_ int) {
 
 	// エンジンの初期化
-	KamataEngine::Initialize(L"LE2C_25_モリ_アオト");
+	KamataEngine::Initialize(L"LE2B_27_モリ_アオト");
 	// DirectXCommonインスタンスの取得
 	KamataEngine::DirectXCommon* dxCommon = KamataEngine::DirectXCommon::GetInstance();
 	// ゲームシーンのインスタンス生成
