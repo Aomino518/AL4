@@ -1,5 +1,6 @@
 #pragma once
 #include "KamataEngine.h"
+#include "Player.h"
 
 class GameScene {
 public:
@@ -11,4 +12,15 @@ public:
 
 	// 描画
 	void Draw();
+
+private:
+	KamataEngine::WorldTransform worldTransform_{};
+	KamataEngine::Camera camera_{};
+
+	// プレイヤーインスタンス
+	std::unique_ptr<Player> player_;
+
+	// プレイヤーのモデル
+	KamataEngine::Model* modelPlayer_ = nullptr;
+
 };

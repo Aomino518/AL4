@@ -1,6 +1,7 @@
 #include <Windows.h>
 #include <KamataEngine.h>
 #include "GameScene.h"
+#include <imgui.h>
 
 // Windowsアプリでのエントリーポイント(main関数)
 int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR, _In_ int) {
@@ -13,6 +14,8 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR, _In_ int) {
 	GameScene* gameScene = new GameScene();
 	// ゲームシーンの初期化
 	gameScene->Init();
+	// ImGuiManagerインスタンスの取得
+	KamataEngine::ImGuiManager* imguiManager = KamataEngine::ImGuiManager::GetInstance();
 
 	// メインループ
 	while (true) {
@@ -26,10 +29,14 @@ int WINAPI WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ LPSTR, _In_ int) {
 
 		// 描画開始
 		dxCommon->PreDraw();
+		imguiManager->Begin();
+		ImGui::Begin("GameScene");
 
 		// ゲームシーンの描画
 		gameScene->Draw();
 
+		ImGui::End();
+		imguiManager->End();
 		// 描画終了
 		dxCommon->PostDraw();
 	}
