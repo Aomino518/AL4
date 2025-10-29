@@ -1,6 +1,8 @@
 #pragma once
 #include "KamataEngine.h"
 #include "Player.h"
+#include "Enemy.h"
+#include "ModelManager.h"
 
 class GameScene {
 public:
@@ -19,8 +21,6 @@ private:
 
 	// プレイヤーインスタンス
 	std::unique_ptr<Player> player_;
-
-	// プレイヤーのモデル
-	KamataEngine::Model* modelPlayer_ = nullptr;
-
+	// エネミーインスタンス
+	std::unique_ptr<Enemy> enemy_;
 };

@@ -1,11 +1,12 @@
 #pragma once
 #include <KamataEngine.h>
+#include "ModelManager.h"
 
 class Player;
 
 class Bullet {
 public:
-	void Init(KamataEngine::Model* model, KamataEngine::Camera* camera, const KamataEngine::Vector3& position);
+	void Init(ModelManager* model, KamataEngine::Camera* camera, const KamataEngine::Vector3& position);
 
 	void Update();
 

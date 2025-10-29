@@ -3,11 +3,12 @@
 #include "MathUtils.h"
 #include <cassert>
 #include "Bullet.h"
+#include "ModelManager.h"
 
 class Player {
 public:
 	// 初期化
-	void Init(KamataEngine::Model* model, KamataEngine::Camera* camera, const KamataEngine::Vector3& position);
+	void Init(ModelManager* model, KamataEngine::Camera* camera, const KamataEngine::Vector3& position);
 
 	// 更新処理
 	void Update();
