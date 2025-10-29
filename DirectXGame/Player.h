@@ -2,6 +2,7 @@
 #include <KamataEngine.h>
 #include "MathUtils.h"
 #include <cassert>
+#include "Bullet.h"
 
 class Player {
 public:
@@ -16,9 +17,12 @@ public:
 
 	void ImGui();
 
+	KamataEngine::Vector3 GetTranslate() { return worldTransform_.translation_; }
+
 private:
 	KamataEngine::WorldTransform worldTransform_{};
 	KamataEngine::Model* model_ = nullptr;
 	KamataEngine::Camera* camera_ = nullptr;
-
+	float velocity = 1.0f;
+	std::unique_ptr<Bullet> bullet_ = std::make_unique<Bullet>();
 };
