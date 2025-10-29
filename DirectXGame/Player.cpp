@@ -3,8 +3,8 @@
 
 using namespace KamataEngine;
 
-void Player::Init(Model* model, Camera* camera, const Vector3& position) { 
-	model_ = model;
+void Player::Init(ModelManager* model, Camera* camera, const Vector3& position) { 
+	model_ = model->GetInstance()->Get("Player");
 	camera_ = camera;
 	worldTransform_.Initialize();
 	worldTransform_.translation_ = position;

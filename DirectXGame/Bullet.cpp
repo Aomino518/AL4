@@ -3,8 +3,8 @@
 
 using namespace KamataEngine;
 
-void Bullet::Init(Model* model, Camera* camera, const Vector3& position) { 
-	model_ = model;
+void Bullet::Init(ModelManager* model, Camera* camera, const Vector3& position) { 
+	model_ = model->GetInstance()->Get("Bullet");
 	camera_ = camera;
 	worldTransform_.Initialize();
 	worldTransform_.translation_ = position;
